@@ -2,16 +2,66 @@
 const today = new Date();
 ---
 
-<footer>
-	&copy; {today.getFullYear()} YOUR NAME HERE. All rights reserved.
+<footer id="footer" class="footer">
+  <div class="inner l-inner">
+      <p class="copy">
+          <small>Copyright © 2020 YOSHIKI. All Rights Reserved.</small>
+      </p>
+  </div>
 </footer>
 <div class="pagetop">
-	<a href="#mv"><img src="/assets/images/pagetop.png" alt="TOPへ"></a>
+  <a href="#mv"><img src="/assets/images/common/pagetop.png" alt="TOPへ" /></a>
 </div>
 
-<style>
-	footer {
-		padding: 25px;
-		text-align: center;
+<style lang="scss">
+.footer {
+  background: #fff;
+  position: relative;
+  z-index: 101;
+  .inner {
+    background: #e0f2f5;
+    text-align: center;
+    padding: 2rem 0;
+    position: relative;
+    &:before,
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+
+      border-style: solid;
+      height: 0;
+      width: 0;
+    }
+    &:before {
+      border-width: 5.8rem 2.5rem 0 0;
+      border-color: transparent #e0f2f5 transparent transparent;
+      left: -2.5rem;
+    }
+    &:after {
+      border-width: 5.8rem 0 0 2.5rem;
+      border-color: transparent transparent transparent #e0f2f5;
+      right: -2.5rem;
+    }
 	}
+	.copy {
+		font-size: 1.2rem;
+	}
+}
+  .pagetop {
+    cursor: pointer;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 1000;
+    transition: 0.45s;
+    img {
+      vertical-align: middle;
+    }
+    &:hover {
+      transition: 0.15s;
+      opacity: 0.5;
+    }
+  }
 </style>
