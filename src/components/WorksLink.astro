@@ -1,0 +1,79 @@
+---
+// export interface Props extends astroHTML.JSX.AnchorHTMLAttributes {}
+import { MAIN_COLOR } from "../config";
+
+const { ttl, desc, link, imgPath } = Astro.props;
+---
+
+<a href={link} target="_blank">
+  <article class="works-link">
+    <div class="inner">
+      <div class="img">
+        <img src={imgPath} alt={ttl} />
+      </div>
+      <div class="body">
+        <h4 class="ttl">{ttl}</h4>
+        <p class="txt">
+          {desc}
+        </p>
+      </div>
+    </div>
+  </article>
+</a>
+
+<style lang="scss" define:vars={{ MAIN_COLOR }}>
+  .works-link {
+    overflow: hidden;
+    position: relative;
+    img {
+      vertical-align: middle;
+    }
+    &:before {
+      background: rgba(255, 255, 255, 0.9);
+      content: "";
+      display: block;
+      height: 100%;
+      width: 100%;
+      transform: scale(2) translate(-60%, -60%) rotate(-45deg);
+      transition: all 0.5s;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+    .body {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      width: 80%;
+      z-index: 2;
+    }
+    .ttl {
+      color: var(--MAIN_COLOR);
+      font-size: 21px;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .txt {
+      font-size: 14px;
+    }
+
+    // animetion
+    .body {
+      opacity: 0;
+      transition: all 0.35s;
+    }
+    &:hover {
+      &:before {
+        transform: scale(2) translate(0, 0) rotate(-45deg);
+      }
+      .body {
+        opacity: 1;
+        transition: all 0.35s 0.15s;
+      }
+    }
+  }
+</style>
