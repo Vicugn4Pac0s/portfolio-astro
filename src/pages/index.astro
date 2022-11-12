@@ -4,6 +4,7 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
 import Mv from "../components/Mv.astro";
+import About from "./_about.astro";
 ---
 
 <!DOCTYPE html>
@@ -17,6 +18,8 @@ import Mv from "../components/Mv.astro";
       <Header title={SITE_TITLE} />
       <main>
         <Mv />
+        
+        <About />
       </main>
       <Footer />
       <div id="js-particles" class="particles"></div>

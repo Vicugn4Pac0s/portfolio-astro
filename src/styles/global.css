@@ -257,3 +257,8 @@ blockquote {
     max-width: 480px;
   }
 }
+
+.l-section {
+  padding: 6rem 0;
+  position: relative;
+}

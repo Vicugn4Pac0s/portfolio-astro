@@ -1,0 +1,81 @@
+---
+import Heading01 from "../components/Heading01.astro";
+---
+
+<section id="about" class="about l-section">
+  <div class="l-inner">
+    <div class="cont">
+      <div class="cont__inner">
+        <div class="cont__ttl-wrap">
+          <Heading01>ABOUT</Heading01>
+        </div>
+        <p class="cont__txt">
+          はじめまして。YOSHIKIと申します。<br
+          />独学でWebサイト制作を学び、Web制作会社に入社、数々の大手企業のWebサイト制作に携わってきました。主にフロントエンド周りを得意としております。（CSS設計・インタラクティブサイトの制作・Wordpress・Webアプリケーション等）<br
+          />煩わしいこと・めんどくさいことが大嫌いすぎて、快適なPC環境を求めて日々模索中。<br
+          /><br />【受賞歴】<br />
+          <a
+            href="https://ps.nikkei.co.jp/nbrand/awards/2017/yanmar.html"
+            target="_blank"
+            >2017年　第８回日経電子版広告賞　コンテンツ部門　優秀賞</a
+          >
+        </p>
+      </div>
+    </div>
+    <div class="img">
+      <img src="/assets/images/top/about_img.png" alt="ABOUTイメージ" />
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  .about {
+    background: #fff;
+    padding-bottom: 28rem;
+    z-index: 1;
+    > .l-inner {
+      position: relative;
+    }
+    .img {
+      position: absolute;
+      bottom: -20rem;
+      right: -20rem;
+    }
+  }
+  .cont {
+    position: relative;
+    a {
+      color: #8ABED7;
+      text-decoration: underline;
+      transition: 0.35s;
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+    &__inner {
+      background: #f9f9f9;
+      box-sizing: border-box;
+      padding: 6rem 4rem;
+      position: relative;
+      width: 74rem;
+      &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        right: -8rem;
+
+        border-style: solid;
+        border-width: 28.8rem 8rem 0 0;
+        border-color: #f9f9f9 transparent transparent transparent;
+        height: 0;
+        width: 0;
+      }
+    }
+    &__ttl-wrap {
+      position: absolute;
+      top: -1.8rem;
+      left: -1rem;
+    }
+  }
+</style>
