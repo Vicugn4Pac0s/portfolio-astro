@@ -207,3 +207,15 @@ import Heading01 from "../components/Heading01.astro";
     }
   }
 </style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const $_form = document.getElementById('form');
+    if($_form) {
+      $_form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert("ほんますみません! メールフォームはまだ準備中です...");
+      });
+    }
+  });
+</script>
