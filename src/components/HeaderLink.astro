@@ -1,0 +1,33 @@
+---
+export interface Props extends astroHTML.JSX.AnchorHTMLAttributes {}
+import { MAIN_COLOR } from "../config";
+
+const { href, class: className, ...props } = Astro.props;
+const isActive = href === Astro.url.pathname.replace(/\/$/, "");
+---
+
+<a href={href} class:list={[className, { active: isActive }]} {...props}>
+  <slot />
+</a>
+<style lang="scss" define:vars={{ MAIN_COLOR }}>
+  a {
+    color: #666;
+    display: block;
+    font-size: 1.8rem;
+    font-family: "Russo One";
+    line-height: 3.1rem;
+    padding: 0 3rem;
+
+    transition: 0.35s;
+    &:hover {
+      color: var(--MAIN_COLOR);
+      transition: 0.15s;
+    }
+		&.current {
+			a {
+				color: var(--MAIN_COLOR);
+				transition: 0.15s;
+			}
+		}
+  }
+</style>

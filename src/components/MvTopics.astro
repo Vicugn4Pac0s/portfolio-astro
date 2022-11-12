@@ -1,0 +1,66 @@
+---
+import Heading01 from "./Heading01.astro";
+---
+
+<section class="mv-topics">
+  <div class="inner">
+    <div class="ttl">
+      <Heading01>TOPICS</Heading01>
+    </div>
+    <div class="body">
+      <p class="txt">2020.11.03　Webサイトを公開しました。</p>
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  .mv-topics {
+    background: #fff;
+    color: #333;
+    position: relative;
+    &:before,
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+
+      border-style: solid;
+      height: 0;
+      width: 0;
+    }
+    &:before {
+      border-width: 104px 50px 0 0;
+      border-color: transparent rgba(255, 255, 255, 1) transparent transparent;
+      left: -50px;
+    }
+    &:after {
+      border-width: 104px 0 0 50px;
+      border-color: transparent transparent transparent rgba(255, 255, 255, 1);
+      right: -50px;
+    }
+    .inner {
+      padding: 4rem 0;
+      position: relative;
+    }
+    .ttl {
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      -webkit-transform: translate(-50%, 0);
+      -ms-transform: translate(-50%, 0);
+      transform: translate(-50%, 0);
+    }
+    .body {
+      margin: 0 auto;
+      width: 680px;
+    }
+    @media screen and (max-width:767px) {
+      .body {
+        width: 100%;
+      }
+    }
+  }
+</style>
+
+<script></script>

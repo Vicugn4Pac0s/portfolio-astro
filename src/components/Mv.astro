@@ -1,0 +1,84 @@
+---
+import MvTopics from "./MvTopics.astro";
+---
+
+<div id="mv" class="mv">
+  <div class="inner l-inner">
+    <div class="body">
+      <h2 class="ttl">
+        <img src="/assets/images/top/mv_ttl.png" alt="Thanks for visiting!" />
+      </h2>
+      <p class="txt">Yoshiki's portfolio site</p>
+    </div>
+    <div class="topics-wrap">
+      <MvTopics />
+    </div>
+  </div>
+  <div class="bg">
+  </div>
+</div>
+
+<style lang="scss">
+  .mv {
+    color: #fff;
+    text-align: center;
+    min-height: 40rem;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    .inner {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      -webkit-transform: translate(-50%, 0);
+      -ms-transform: translate(-50%, 0);
+      transform: translate(-50%, 0);
+      height: 100%;
+      z-index: 100;
+    }
+    .body {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      width: 100%;
+    }
+    .ttl {
+      margin-bottom: 1rem;
+    }
+    .txt {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 2.1rem;
+      letter-spacing: 1px;
+      @media screen and (max-width:767px) {
+        font-size: 1.6rem
+      }
+    }
+    .topics-wrap {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+    }
+    .bg {
+    }
+  }
+</style>
+
+<script>
+  function mvSizeSetting() {
+    const $_mv = document.getElementById('mv');
+    const wH = document.documentElement.clientHeight;
+    if($_mv) {
+      $_mv.style.height = wH.toString() + 'px';
+    }
+  }
+  document.addEventListener('DOMContentLoaded',() => {
+    mvSizeSetting();
+  }, false);
+  window.addEventListener('resize', ()=> {
+    mvSizeSetting();
+  });
+</script>

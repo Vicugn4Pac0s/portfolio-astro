@@ -1,0 +1,39 @@
+---
+import HeaderLink from "./HeaderLink.astro";
+---
+
+<nav class="g-menu">
+  <div class="inner">
+    <HeaderLink href="#mv">TOP</HeaderLink>
+    <HeaderLink href="#about">ABOUT</HeaderLink>
+    <HeaderLink href="#anchor-works">WORKS</HeaderLink>
+    <HeaderLink href="#anchor-blog">NOTE</HeaderLink>
+    <HeaderLink href="#footer">CONTACT</HeaderLink>
+  </div>
+</nav>
+<style lang="scss">
+  .g-menu {
+    background: rgba(255, 255, 255, 0.5);
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 999;
+    padding: 3rem 6rem;
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: -50px;
+
+      border-style: solid;
+      border-width: 0 50px 91px 0;
+      border-color: transparent rgba(255, 255, 255, 0.5) transparent transparent;
+      height: 0;
+      width: 0;
+    }
+    .inner {
+      display: flex;
+    }
+  }
+</style>

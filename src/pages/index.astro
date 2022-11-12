@@ -1,0 +1,39 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
+import Mv from "../components/Mv.astro";
+---
+
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <div class="wrap">
+
+      <Header title={SITE_TITLE} />
+      <main>
+        <Mv />
+      </main>
+      <Footer />
+      <div id="js-particles" class="particles"></div>
+
+    </div>
+    <style lang="scss">
+      .wrap {
+        background: #8ABED7;
+      }
+      .particles {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: 0;
+      }
+    </style>
+  </body>
+</html>

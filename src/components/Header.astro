@@ -1,0 +1,28 @@
+---
+import GlobalMenu from "./GlobalMenu.astro";
+import { SITE_TITLE } from "../config";
+---
+
+<header id="header" class="header">
+  <div class="inner l-inner">
+    <h1 class="logo">
+      <img src="/assets/images/common/logo.png" alt={SITE_TITLE} />
+    </h1>
+    <GlobalMenu></GlobalMenu>
+  </div>
+</header>
+<style lang="scss">
+  .header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 998;
+		.inner {
+			padding: 3rem 0;
+		}
+		.logo {
+			max-width: 55%;
+		}
+  }
+</style>
