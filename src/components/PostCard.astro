@@ -1,0 +1,73 @@
+---
+// export interface Props extends astroHTML.JSX.AnchorHTMLAttributes {}
+import { MAIN_COLOR } from "../config";
+
+const { key, name, publishAt, eyecatch } = Astro.props;
+---
+
+<a href={"https://note.com/yoshikieee/n/" + key} target="_blank">
+  <article class="card">
+    <div class="inner">
+      <div class="img">
+        <img src={eyecatch} alt="" />
+      </div>
+      <div class="body">
+        <p class="date">
+          <i class="fa fa-clock-o" aria-hidden="true"></i>
+          <time datetime={publishAt}>{publishAt}</time>
+        </p>
+        <h4 class="ttl">{name}</h4>
+      </div>
+    </div>
+  </article>
+</a>
+
+<style lang="scss" define:vars={{ MAIN_COLOR }}>
+  .card {
+    background: #fff;
+    transform-origin: center bottom;
+    transition: 0.35s;
+    height: 100%;
+    .img {
+      box-sizing: border-box;
+      img {
+        vertical-align: middle;
+      }
+    }
+    .body {
+      box-sizing: border-box;
+      padding: 2rem 1rem;
+      position: relative;
+      &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: -2rem;
+        left: 0;
+
+        border-style: solid;
+        border-width: 0 0 2rem 23.5rem;
+        border-color: transparent transparent #ffffff transparent;
+        height: 0;
+        width: 0;
+      }
+    }
+    .date {
+      font-size: 1.2rem;
+      position: absolute;
+      top: -.6rem;
+      right: 1rem;
+    }
+    .ttl {
+      margin-bottom: 1rem;
+    }
+    .txt {
+      font-size: 1.4rem;
+    }
+    &:hover {
+      transform: translate(0, -1rem) scale(1.05);
+      box-shadow: 0rem 5px 1rem rgba(0, 0, 0, 0.1);
+      transition: 0.25s;
+    }
+  }
+</style>

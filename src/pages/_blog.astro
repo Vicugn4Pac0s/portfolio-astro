@@ -1,0 +1,81 @@
+---
+import Heading01 from "../components/Heading01.astro";
+import PostCard from "../components/PostCard.astro";
+
+const response = await fetch('https://note.com/api/v2/creators/yoshikieee/contents?kind=note&page=1');
+const posts = await response.json();
+---
+
+<section id="blog" class="blog">
+  <div class="inner l-inner l-section">
+    <div class="header">
+      <div id="anchor-blog" class="ttl-wrap">
+        <Heading01>NOTE</Heading01>
+      </div>
+    </div>
+    <div class="body">
+      <ul>
+        {posts.data.contents.map((post: any) => (
+          <li>
+            <PostCard key={post.key} name={post.name} publishAt={post.publishAt} eyecatch={post.eyecatch}  />
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  .blog {
+    background: rgba(255, 255, 255, 0.5);
+    position: relative;
+    z-index: 2;
+    .header {
+      background: rgba(255, 255, 255, 0.5);
+      position: absolute;
+      top: -5rem;
+      left: 0;
+      height: 5rem;
+      width: 100%;
+
+      &:before,
+      &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+
+        border-style: solid;
+        height: 0;
+        width: 0;
+      }
+      &:before {
+        border-width: 5rem 2.5rem 0 0;
+        border-color: transparent rgba(255, 255, 255, 0.5) transparent
+          transparent;
+        left: -2.5rem;
+      }
+      &:after {
+        border-width: 5rem 0 0 2.5rem;
+        border-color: transparent transparent transparent
+          rgba(255, 255, 255, 0.5);
+        right: -2.5rem;
+      }
+    }
+    .ttl-wrap {
+      text-align: center;
+      position: absolute;
+      top: -1.8rem;
+      left: 0;
+      width: 100%;
+    }
+    .body ul {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      > li {
+        width: 25%;
+      }
+    }
+  }
+</style>
