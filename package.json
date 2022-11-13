@@ -14,7 +14,9 @@
     "@astrojs/mdx": "^0.11.5",
     "@astrojs/rss": "^1.0.3",
     "@astrojs/sitemap": "^1.0.0",
-    "astro": "^1.6.0"
+    "@astrojs/vue": "^1.2.1",
+    "astro": "^1.6.0",
+    "vue": "^3.2.45"
   },
   "devDependencies": {
     "moment": "^2.29.4",
