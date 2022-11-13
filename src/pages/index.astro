@@ -31,18 +31,48 @@ import FooterTop from "./_footerTop.astro";
       <div id="js-particles" class="particles"></div>
 
     </div>
-    <style lang="scss">
-      .wrap {
-        background: #8ABED7;
-      }
-      .particles {
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        z-index: 0;
-      }
-    </style>
   </body>
 </html>
+
+<style lang="scss">
+  .wrap {
+    background: #8ABED7;
+  }
+  .particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+  }
+</style>
+
+<script>
+  import { gsap } from "gsap";
+
+  gsap.set('#js-particles', {
+    scale: 0
+  });
+  window.addEventListener('load', () => {
+    gsap.to("#js-particles", {
+      scale: 1,
+      duration: 1,
+      ease: "ease-in-out",
+    });
+  });
+
+  window.addEventListener('scroll', () => {
+    const s = window.scrollY;
+    const $_target = document.getElementById('js-particles');
+    let moving = 1 + (s * 0.0003);
+
+    if(moving > 1.3) {
+      moving = 1.3;
+    }
+    
+    if($_target) {
+      $_target.style.scale = moving.toString();
+    }
+  });
+</script>
