@@ -19,6 +19,11 @@ import HeaderLink from "./HeaderLink.astro";
     right: 0;
     z-index: 999;
     padding: 2rem 6rem;
+
+    transition: 0.35s;
+    &.hidden {
+      translate: 0 -100%;
+    }
     &:after {
       content: "";
       display: block;
@@ -37,3 +42,22 @@ import HeaderLink from "./HeaderLink.astro";
     }
   }
 </style>
+
+<script>
+  const $_gMenu = document.getElementsByClassName("g-menu")[0];
+  let preS: number;
+
+  window.addEventListener("scroll", (e) => {
+    let s = window.scrollY;
+    if (!preS) {
+      preS = s;
+      return false;
+    }
+    if (s > preS) {
+      $_gMenu.classList.add("hidden");
+    } else {
+      $_gMenu.classList.remove("hidden");
+    }
+    preS = s;
+  });
+</script>
