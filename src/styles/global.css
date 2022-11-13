@@ -60,6 +60,10 @@ blockquote {
   font-style: italic;
 }
 
+.wrap {
+  overflow: hidden;
+}
+
 .l-inner {
   margin: 0 auto;
   width: 1000px;
