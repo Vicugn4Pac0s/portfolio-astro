@@ -12,15 +12,9 @@
   },
   "dependencies": {
     "@astrojs/mdx": "^0.11.5",
-    "@astrojs/react": "^1.2.2",
     "@astrojs/rss": "^1.0.3",
     "@astrojs/sitemap": "^1.0.0",
-    "@types/react": "^18.0.25",
-    "@types/react-dom": "^18.0.8",
-    "astro": "^1.6.0",
-    "particlesjs": "^2.2.3",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "astro": "^1.6.0"
   },
   "devDependencies": {
     "moment": "^2.29.4",
